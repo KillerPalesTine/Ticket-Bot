@@ -58,3 +58,17 @@ if (message.content.startsWith('(prefix)setavatar')) {
     message.channel.send(`Changing The Avatar To :**${argresult}** `);
 }
 });
+
+client.on("message", message => {
+  if (message.content === "!help") {
+message.author.send(`**
+Soon
+Soon
+Soon
+Soon
+Soon
+Soon
+**`)
+      message.channel.send("تفقد الخاص")
+  }
+});
