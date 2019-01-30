@@ -72,26 +72,3 @@ Soon
       message.channel.send("تفقد الخاص")
   }
 });
-
-client.on('guildMemberAdd', member => { //LAST CODES -HONRAR-
-  member.guild.fetchInvites().then(guildInvites => {
-    const ei = invites[member.guild.id];
-    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
-    const inviter = client.users.get(invite.inviter.id);
-    const stewart = member.guild.channels.find("name", "welcome");
-     stewart.send(`<@${member.user.id}> تمت الدعوه من <@${inviter.id}>`);
-from <@${inviter.id}>. Invite was used ${invite.uses} times since its creation.`);
-  });
-})
-
-client.on('message', message => {
-if(message.content === _ + "restart") {
-      if (!devs.includes(message.author.id)) return;
-          message.channel.send(`⚠️ **الشخص الذي اعاد تشغيل البوت ${message.author.username}**`);
-        console.log(`⚠️ جاري اعادة تشغيل البوت... ⚠️`);
-        client.destroy();
-        child_process.fork(__dirname + "bot.js");
-        console.log(`تم اعادة تشغيل البوت`);
-    }
-  
-  });
