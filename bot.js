@@ -83,3 +83,15 @@ client.on('guildMemberAdd', member => { //LAST CODES -HONRAR-
 from <@${inviter.id}>. Invite was used ${invite.uses} times since its creation.`);
   });
 })
+
+client.on('message', message => {
+if(message.content === _ + "restart") {
+      if (!devs.includes(message.author.id)) return;
+          message.channel.send(`⚠️ **الشخص الذي اعاد تشغيل البوت ${message.author.username}**`);
+        console.log(`⚠️ جاري اعادة تشغيل البوت... ⚠️`);
+        client.destroy();
+        child_process.fork(__dirname + "bot.js");
+        console.log(`تم اعادة تشغيل البوت`);
+    }
+  
+  });
