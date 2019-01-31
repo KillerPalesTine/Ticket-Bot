@@ -70,6 +70,15 @@ Soon
 Soon
 **`)
       message.channel.send("تفقد الخاص")
-      message.channel.send("!ply !help")
   }
 });
+
+client.on("message", message => {
+  if (message.content === "السلام عليكم") {
+message.channel.send(`**
+وعليكم السلام ورحمة الله وبركاته
+**`)
+      message.channel.send("اهلا فيك منوور")
+  }
+});
+
