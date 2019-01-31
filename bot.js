@@ -73,12 +73,8 @@ Soon
   }
 });
 
-client.on("message", message => {
-  if (message.content === "السلام عليكم") {
-message.channel.send(`**
-وعليكم السلام ورحمة الله وبركاته
-**`)
-      message.channel.send("اهلا فيك منوور")
-  }
-});
 
+client.on('guildMemberAdd', member => {
+    const guild = member.guild;
+    guild.channels.find(channel => channel.name === "未来welcome未来").send("اهلا وسهلا بك في سيرفرنا منور "+member.user.username);
+});
