@@ -50,7 +50,7 @@ client.on('message',async message => {
   if(message.channel.type === 'dm') return;
   if(message.author.bot) return;
   let args = message.content.split(' ');
-  if(args[0] === `${prefix}bc`) {
+  if(args[0] === `$bc`) {
   if(!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send('- **أنت لا تملك الصلاحيات اللازمة لأستخدام هذا الأمر**');
   if(!args[1]) return message.channel.send('- **يجب عليك كتابة الرسالة بعد الأمر**');
 
