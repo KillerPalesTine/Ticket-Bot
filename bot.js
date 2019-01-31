@@ -38,7 +38,7 @@ Soon
 
 client.on("message", message => {
   if (message.content === "!invite") {
-message.channel.send(`**
+message.author.send(`**
 https://discordapp.com/api/oauth2/authorize?client_id=507900420887150592&permissions=8&scope=bot
 **`)
   }
