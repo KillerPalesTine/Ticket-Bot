@@ -17,16 +17,16 @@ client.on('ready',  () => {
   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
   console.log('is online')
 client.user.setStatus("online");
-client.user.setGame(`type !help`,'https://www.twitch.tv/TEST-Broadcast');
-client.user.setGame(`type !invite to invite bot`,'https://www.twitch.tv/TEST-Broadcast');
+client.user.setGame(`type $help`,'https://www.twitch.tv/TEST-Broadcast');
+client.user.setGame(`type $invite to invite bot`,'https://www.twitch.tv/TEST-Broadcast');
 });
 
 
 client.on("message", message => {
-  if (message.content === "!help") {
+  if (message.content === "$help") {
 message.author.send(`**
-Soon
-Soon
+$clear لمسح الشات
+$bc لارسال رسالة ب الخاص ل الاعضاء
 Soon
 Soon
 Soon
@@ -37,7 +37,7 @@ Soon
 });
 
 client.on("message", message => {
-  if (message.content === "!invite") {
+  if (message.content === "$invite") {
 message.author.send(`**
 https://discordapp.com/api/oauth2/authorize?client_id=507900420887150592&permissions=8&scope=bot
 **`)
@@ -87,5 +87,47 @@ client.on('message',async message => {
       });
     });
   });
+}
+});
+
+client.on('guildMemberAdd', member => { //LAST CODES -HONRAR-
+  member.guild.fetchInvites().then(guildInvites => {
+    const ei = invites[member.guild.id];
+    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+    const inviter = client.users.get(invite.inviter.id);
+    const stewart = member.guild.channels.find("name", "welcome");
+     stewart.send(`<@${member.user.id}> تمت الدعوه من <@${inviter.id}>`);
+from <@${inviter.id}>. Invite was used ${invite.uses} times since its creation.`);
+  });
+})
+
+client.on('guildCreate', guild => {
+    var embed = new Discord.RichEmbed()
+    .setColor(0x5500ff)
+    .setDescription(`**شكراً لك لإضافه البوت الى سيرفرك**`)
+        guild.owner.send(embed)
+  });
+
+client.on('message', msg => {
+  if (msg.author.bot) return;
+  if (!msg.content.startsWith(prefix)) return;
+  let command = msg.content.split(" ")[0];
+  command = command.slice(prefix.length);
+  let args = msg.content.split(" ").slice(1);
+ 
+    if(command === "$clear") {
+        const emoji = client.emojis.find("name", "wastebasket")
+    let textxt = args.slice(0).join("");
+    if(msg.member.hasPermission("MANAGE_MESSAGES")) {
+    if (textxt == "") {
+        msg.delete().then
+    msg.channel.send("***```Supply A Number ًں‘Œ```***").then(m => m.delete(3000));
+} else {
+    msg.delete().then
+    msg.delete().then
+    msg.channel.bulkDelete(textxt);
+        msg.channel.send("```Cleard: " + textxt + "\n Messages```").then(m => m.delete(3000));
+        }    
+    }
 }
 });
