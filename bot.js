@@ -86,11 +86,11 @@ message.channel.send(`**
 
 client.on('guildMemberAdd', member => {
     const guild = member.guild;
-    guild.channels.find(channel => channel.name === "未来welcome未来").send("اهلا وسهلا بك في سيرفرنا منور "+member.user.username);
+    guild.channels.find(channel => channel.name === "welcome").send("اهلا وسهلا بك في سيرفرنا منور "+member.user.username);
 });
 
 client.on('guildMemberAdd', member => {
 console.log('User ' + member.user.username + 'Has Joined')
 var role = member.guild.roles.find('name', 'User');
-member.addRole(Member)
+member.addRole(role)
 });
