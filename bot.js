@@ -45,7 +45,7 @@ message.channel.send(`**
   }
 });
 
-css 
+
 client.on('message',async message => {
   if(message.channel.type === 'dm') return;
   if(message.author.bot) return;
