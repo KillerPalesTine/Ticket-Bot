@@ -76,10 +76,10 @@ Soon
 
 client.on("message", message => {
   if (message.content === "السلام عليكم") {
-message.author.send(`**
+message.channel.send(`**
 وعليكم السلام ورحمة الله وبركاته
 **`)
-      message.channel.send("منوور <3")
+      message.channel.send("منوور :heart:")
   }
 });
 
