@@ -17,6 +17,7 @@ client.on('ready',  () => {
   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
   console.log('is online')
 client.user.setStatus("online");
+client.user.setGame(`type !help`,'https://www.twitch.tv/TEST-Broadcast');
 });
 
 
