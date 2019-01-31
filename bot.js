@@ -70,5 +70,6 @@ Soon
 Soon
 **`)
       message.channel.send("تفقد الخاص")
+      message.channel.send("!ply !help")
   }
 });
