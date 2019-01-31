@@ -18,6 +18,7 @@ client.on('ready',  () => {
   console.log('is online')
 client.user.setStatus("online");
 client.user.setGame(`type !help`,'https://www.twitch.tv/TEST-Broadcast');
+client.user.setGame(`type !invite to invite bot`,'https://www.twitch.tv/TEST-Broadcast');
 });
 
 
@@ -32,6 +33,14 @@ Soon
 Soon
 **`)
       message.channel.send("تفقد الخاص")
+  }
+});
+
+client.on("message", message => {
+  if (message.content === "!invite") {
+message.channel.send(`**
+https://discordapp.com/api/oauth2/authorize?client_id=507900420887150592&permissions=8&scope=bot
+**`)
   }
 });
 
