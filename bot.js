@@ -17,6 +17,8 @@ client.on('ready',  () => {
   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
   console.log('is online')
 client.user.setStatus("online");
+client.user.setGame(`type $help`,'https://www.twitch.tv/TEST-Broadcast');
+client.user.setGame(`$invite اضافة البوت`,'https://www.twitch.tv/TEST-Broadcast');
 });
 
 
@@ -95,31 +97,3 @@ client.on('guildCreate', guild => {
     .setDescription(`**شكراً لك لإضافه البوت الى سيرفرك**`)
         guild.owner.send(embed)
   });
-
-
-client.on('message', message => {
-    let argresult = message.content.split(`).slice(1).join(' ');
-    if (message.content.startsWith(prefix + 'setStreaming')) {
-      if (!devs.includes(message.author.id)) return message.channel.send("<@372789415216414730> only this guy can do restart the bot so don't try again :wink:.");
-      message.delete();
-      client.user.setGame(argresult, 'https://twitch.tv/DynastyShop');
-
-    } else if(message.content.startsWith(prefix + 'setWatching')) {
-        client.user.setActivity(argresult,{type: 'WATCHING'});
-
-      } else if(message.content.startsWith(prefix + 'setListening')) {
-        client.user.setActivity(argresult,{type: 'LISTENING'});
-
-      } else if(message.content.startsWith(prefix + 'setPlaying')) {
-        client.user.setActivity(argresult,{type: 'PLAYING'});
-
-      } else if(message.content.startsWith(prefix + 'setName')) {
-        client.user.setUsername(argresult);
-
-      } else if(message.content.startsWith(prefix + 'setAvatar')) {
-        client.user.setAvatar(argresult);
-
-
-      } else if(message.content.startsWith(prefix + 'setStatus')) {
-        if(!argresult) return message.channel.send('online,DND(Do not Distrub),`idle, invisible(Offline) 🎶 Select a situation');
-        client.user.setStatus(argresult);
