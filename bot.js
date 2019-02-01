@@ -97,10 +97,3 @@ client.on('guildCreate', guild => {
     .setDescription(`**شكراً لك لإضافه البوت الى سيرفرك**`)
         guild.owner.send(embed)
   });
-
-client.on("ready", () => {
-  function Rainbow() {
-    client.guilds.get('491909574505398272').roles.find("name", "Rainbow").setColor("RANDOM");
-  };
-  setInterval(Rainbow, 1000);
-});
