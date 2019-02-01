@@ -113,16 +113,6 @@ client.on('message',async message => {
 }
 });
 
-client.on('guildMemberAdd', member => { //LAST CODES -HONRAR-
-  member.guild.fetchInvites().then(guildInvites => {
-    const ei = invites[member.guild.id];
-    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
-    const inviter = client.users.get(invite.inviter.id);
-    const stewart = member.guild.channels.find("name", "welcome");
-     stewart.send(`<@${member.user.id}> تمت الدعوه من <@${inviter.id}>`);
-from <@${inviter.id}>. Invite was used ${invite.uses} times since its creation.`);
-  });
-})
 
 client.on('guildCreate', guild => {
     var embed = new Discord.RichEmbed()
@@ -144,7 +134,7 @@ client.on('message', msg => {
     if(msg.member.hasPermission("MANAGE_MESSAGES")) {
     if (textxt == "") {
         msg.delete().then
-    msg.channel.send("***```Supply A Number ًں‘Œ```***").then(m => m.delete(3000));
+    msg.channel.send("***```تم مسح الشات```***").then(m => m.delete(3000));
 } else {
     msg.delete().then
     msg.delete().then
