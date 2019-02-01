@@ -19,36 +19,11 @@ client.on('ready',  () => {
 client.user.setStatus("online");
 });
 
-client.on('message', message => {
-    if (message.content.startsWith("رابط")) {
-        message.channel.createInvite({
-        thing: true,
-        maxUses: 1,
-        maxAge: 3600,
-    }).then(invite =>
-      message.author.sendMessage(invite.url)
-    )
-    const embed = new Discord.RichEmbed()
-        .setColor("RANDOM")
-          .setDescription("تم أرسال الرابط برسالة خاصة")
-           .setAuthor(client.user.username, client.user.avatarURL)
-                 .setAuthor(client.user.username, client.user.avatarURL)
-                .setFooter('طلب بواسطة: ' + message.author.tag)
-
-      message.channel.sendEmbed(embed).then(message => {message.delete(10000)})
-              const Embed11 = new Discord.RichEmbed()
-        .setColor("RANDOM")
-        
-    .setDescription("** مدة الرابط : ساعه | عدد استخدامات الرابط : 1 **")
-      message.author.sendEmbed(Embed11)
-    }
-});
-
 
 client.on("message", message => {
   if (message.content === "$help") {
 message.author.send(`**
-$clear لمسح الشات
+Soon
 $bc لارسال رسالة ب الخاص ل الاعضاء
 Soon
 Soon
@@ -78,7 +53,7 @@ message.channel.send(`**
 });
 
 
-client.on('message',async message => {
+client.on('message', message => {
   if(message.channel.type === 'dm') return;
   if(message.author.bot) return;
   let args = message.content.split(' ');
@@ -121,29 +96,6 @@ client.on('guildCreate', guild => {
         guild.owner.send(embed)
   });
 
-client.on('message', msg => {
-  if (msg.author.bot) return;
-  if (!msg.content.startsWith(prefix)) return;
-  let command = msg.content.split(" ")[0];
-  command = command.slice(prefix.length);
-  let args = msg.content.split(" ").slice(1);
- 
-    if(command === "$clear") {
-        const emoji = client.emojis.find("name", "wastebasket")
-    let textxt = args.slice(0).join("");
-    if(msg.member.hasPermission("MANAGE_MESSAGES")) {
-    if (textxt == "") {
-        msg.delete().then
-    msg.channel.send("***```تم مسح الشات```***").then(m => m.delete(3000));
-} else {
-    msg.delete().then
-    msg.delete().then
-    msg.channel.bulkDelete(textxt);
-        msg.channel.send("```Cleard: " + textxt + "\n Messages```").then(m => m.delete(3000));
-        }    
-    }
-}
-});
 
 client.on('message', message => {
     let argresult = message.content.split(`).slice(1).join(' ');
