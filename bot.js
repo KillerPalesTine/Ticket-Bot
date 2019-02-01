@@ -41,6 +41,7 @@ client.on("message", message => {
 message.author.send(`**
 https://discordapp.com/api/oauth2/authorize?client_id=507900420887150592&permissions=8&scope=bot
 **`)
+    message.channel.send("تم الارسال في الخاص")
   }
 });
 
