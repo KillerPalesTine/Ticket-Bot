@@ -68,7 +68,7 @@ client.on('message', message => {
   let errorCount = 0;
   let successCount = 0;
     let status;
-    if(msgCount === message.guild.memberCount) {
+    if(msgCount === message.guild.memberCountembed) {
         status = 'Sent';
     } else if(msgCount !== message.guild.memberCount) {
         status = 'Sending';
