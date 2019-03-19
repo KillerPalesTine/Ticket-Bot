@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const prefix = "%";
+const prefix = "T%";
 
 
 
@@ -18,7 +18,7 @@ function clean(text) {
 //console & playing !
 client.on('ready', () => {
     console.log(`${client.user.tag} Is Online !`) 
- client.user.setGame(`%help | ArabGames`,"http://twitch.tv/Death Shop")
+ client.user.setGame(`T%help | ArabGames`,"http://twitch.tv/Death Shop")
 });
 
 
