@@ -115,7 +115,7 @@ client.on("message", (message) => {
 
 
 client.on("message", msg => {//Alpha Codes 
-    var Alpha = '%';//البرفكس
+    var Alpha = '-';//البرفكس
     if(msg.content.startsWith(Alpha + "inv")){//Alpha Codes 
         let e = new Discord.RichEmbed()//Alpha Codes 
         .setTitle("**اضافه البوت لسيرفرك**")//Alpha Codes 
