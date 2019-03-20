@@ -198,6 +198,33 @@ client.on('message', message => {
  
   });
 
+
+client.on('guildDelete', guild => {
+    const embed = new Discord.RichEmbed()
+        .setAuthor(`❌ البوت خرج من سيرفر`)
+        .setDescription(`**
+→ | اسم السيرفر : \`${guild.name}\`
+→ | ايدي السيرفر: \`${guild.id}\`
+→ | صاحب السيرفر : ${guild.owner}
+→ | عدد الاعضاء: \`${guild.memberCount}\`
+→ | عدد السيرفرات الحاليه : \`${client.guilds.size}\`**`)
+        .setColor('RANDOM')
+client.guilds.get('549250692536074241').channels.get('557899870187421706').send(embed)
+}); 
+
+client.on('guildCreate', guild => {
+    const embed = new Discord.RichEmbed()
+        .setAuthor(`البوت دخل سيرفر ✅ `)
+        .setDescription(`**
+→ | اسم السيرفر : \`${guild.name}\`
+→ | ايدي السيرفر: \`${guild.id}\`
+→ | صاحب السيرفر : ${guild.owner}
+→ | عدد الاعضاء: \`${guild.memberCount}\`
+→ | عدد السيرفرات الحاليه : \`${client.guilds.size}\`**`)
+        .setColor('RANDOM')
+client.guilds.get('549250692536074241').channels.get('557899853104021504').send(embed)
+});
+
   
   
   
