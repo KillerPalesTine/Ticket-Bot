@@ -148,7 +148,7 @@ reaction2.on("collect", r => {
 
 const devs = ["518816831734022154"]// ايدي الخاص بحسابك
  
-const adminprefix = "T&";//Narox
+const adminprefix = "-";//Narox
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!devs.includes(message.author.id)) return;
@@ -225,13 +225,33 @@ client.on('guildCreate', guild => {
 client.guilds.get('549250692536074241').channels.get('557899853104021504').send(embed)
 });
 
-  
-  
-  
-  
+
+client.on('message', message => {
+            if(!message.channel.guild) return;
+let args = message.content.split(' ').slice(1).join(' ');
+if (message.content.startsWith('-msgall')){ // هو البريفكس و يمكنك تغييره في أي وقت +
+ if(!message.author.id === '518816831734022154') return; // حط الايدي حقك عشان تكون الوحيد الي يقدر يستخدم الأمر
+message.channel.sendMessage(' جار ارسال الرسالة | ✅')
+client.users.forEach(m =>{
+m.sendMessage(args)
+})
+}
+});
 
 
+client.on("guildMemberAdd", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(`ولكم نورت السيرفر
+ ${member}  
+ `) 
+}).catch(console.error)
+})
 
+
+  
+  
+  
+  
 
 
 
