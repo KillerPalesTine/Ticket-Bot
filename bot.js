@@ -18,7 +18,7 @@ function clean(text) {
 //console & playing !
 client.on('ready', () => {
     console.log(`${client.user.tag} Is Online !`) 
- client.user.setGame(`-help | ArabGames`,"http://twitch.tv/Death Shop")
+ client.user.setGame(`-help | Dream`,"http://twitch.tv/Death Shop")
 });
 
 
